@@ -3,3 +3,11 @@ hint
 project --topLevelPackage com.springsource.roo.pizzashop
 hint
 jpa setup --provider HIBERNATE --database HYPERSONIC_IN_MEMORY
+hint
+entity jpa --class ~.domain.Topping --testAutomatically 
+field string --fieldName name --notNull --sizeMin 2
+entity jpa --class ~.domain.Base --testAutomatically 
+field string --fieldName name --notNull --sizeMin 2
+entity jpa --class ~.domain.Pizza --testAutomatically 
+field string --fieldName name --notNull --sizeMin 2
+field number --fieldName price --type java.lang.Float
