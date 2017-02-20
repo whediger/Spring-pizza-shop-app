@@ -11,3 +11,16 @@ field string --fieldName name --notNull --sizeMin 2
 entity jpa --class ~.domain.Pizza --testAutomatically 
 field string --fieldName name --notNull --sizeMin 2
 field number --fieldName price --type java.lang.Float
+field set --fieldName toppings --type ~.domain.Topping
+field reference --fieldName base --type ~.domain.Base
+entity jpa --class ~.domain.PizzaOrder --testAutomatically 
+field string --fieldName name --notNull --sizeMin 2
+field string --fieldName address --sizeMax 30
+field number --fieldName total --type java.lang.Float
+field date --fieldName deliveryDate --type java.util.Date
+field set --fieldName pizzas --type ~.domain.Pizza
+test integration
+test integration 
+perform tests
+web mvc setup
+web mvc all --package ~.web

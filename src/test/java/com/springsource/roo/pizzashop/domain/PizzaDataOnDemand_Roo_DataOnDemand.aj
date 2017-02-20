@@ -3,6 +3,7 @@
 
 package com.springsource.roo.pizzashop.domain;
 
+import com.springsource.roo.pizzashop.domain.BaseDataOnDemand;
 import com.springsource.roo.pizzashop.domain.Pizza;
 import com.springsource.roo.pizzashop.domain.PizzaDataOnDemand;
 import java.security.SecureRandom;
@@ -12,6 +13,7 @@ import java.util.List;
 import java.util.Random;
 import javax.validation.ConstraintViolation;
 import javax.validation.ConstraintViolationException;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 privileged aspect PizzaDataOnDemand_Roo_DataOnDemand {
@@ -21,6 +23,9 @@ privileged aspect PizzaDataOnDemand_Roo_DataOnDemand {
     private Random PizzaDataOnDemand.rnd = new SecureRandom();
     
     private List<Pizza> PizzaDataOnDemand.data;
+    
+    @Autowired
+    BaseDataOnDemand PizzaDataOnDemand.baseDataOnDemand;
     
     public Pizza PizzaDataOnDemand.getNewTransientPizza(int index) {
         Pizza obj = new Pizza();

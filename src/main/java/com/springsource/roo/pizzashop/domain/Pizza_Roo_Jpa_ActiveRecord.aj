@@ -14,7 +14,7 @@ privileged aspect Pizza_Roo_Jpa_ActiveRecord {
     @PersistenceContext
     transient EntityManager Pizza.entityManager;
     
-    public static final List<String> Pizza.fieldNames4OrderClauseFilter = java.util.Arrays.asList("name", "price");
+    public static final List<String> Pizza.fieldNames4OrderClauseFilter = java.util.Arrays.asList("name", "price", "toppings", "base");
     
     public static final EntityManager Pizza.entityManager() {
         EntityManager em = new Pizza().entityManager;
