@@ -20,3 +20,10 @@ field string --fieldName address --sizeMax 30
 field number --fieldName total --type java.lang.Float
 field date --fieldName deliveryDate --type java.util.Date
 field set --fieldName pizzas --type ~.domain.Pizza
+// [failed] test integration
+!g lb
+addon list
+// [failed] test integration
+// [failed] test integration
+// [failed] test integration
+web mvc setup 
