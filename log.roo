@@ -3,3 +3,5 @@ hint
 project setup --topLevelPackage com.springsource.roo.pizzaShop
 hint
 jpa setup --provider HIBERNATE --database HYPERSONIC_IN_MEMORY --force 
+hint
+entity jpa --class ~.domain.Topping
