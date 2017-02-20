@@ -3,13 +3,16 @@
 
 package com.springsource.roo.pizzashop.domain;
 
+import com.springsource.roo.pizzashop.domain.Base;
 import com.springsource.roo.pizzashop.domain.Pizza;
+import com.springsource.roo.pizzashop.domain.Topping;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Version;
+import org.springframework.util.Assert;
 
 privileged aspect Pizza_Roo_Jpa_Entity {
     
@@ -29,6 +32,16 @@ privileged aspect Pizza_Roo_Jpa_Entity {
     @Version
     @Column(name = "version")
     private Integer Pizza.version;
+    
+    /**
+     * TODO Auto-generated attribute documentation
+     */
+    private static final String Pizza.ITERABLE_TO_ADD_CANT_BE_NULL_MESSAGE = "The given Iterable of items to add can't be null!";
+    
+    /**
+     * TODO Auto-generated attribute documentation
+     */
+    private static final String Pizza.ITERABLE_TO_REMOVE_CANT_BE_NULL_MESSAGE = "The given Iterable of items to add can't be null!";
     
     /**
      * TODO Auto-generated method documentation
@@ -64,6 +77,57 @@ privileged aspect Pizza_Roo_Jpa_Entity {
      */
     public void Pizza.setVersion(Integer version) {
         this.version = version;
+    }
+    
+    /**
+     * TODO Auto-generated method documentation
+     * 
+     * @param toppingsToAdd
+     */
+    public void Pizza.addToToppings(Iterable<Topping> toppingsToAdd) {
+        Assert.notNull(toppingsToAdd, ITERABLE_TO_ADD_CANT_BE_NULL_MESSAGE);
+        for (Topping item : toppingsToAdd) {
+            this.toppings.add(item);
+            item.setPizza(this);
+        }
+    }
+    
+    /**
+     * TODO Auto-generated method documentation
+     * 
+     * @param toppingsToRemove
+     */
+    public void Pizza.removeFromToppings(Iterable<Topping> toppingsToRemove) {
+        Assert.notNull(toppingsToRemove, ITERABLE_TO_REMOVE_CANT_BE_NULL_MESSAGE);
+        for (Topping item : toppingsToRemove) {
+            this.toppings.remove(item);
+            item.setPizza(null);
+        }
+    }
+    
+    /**
+     * TODO Auto-generated method documentation
+     * 
+     * @param base
+     */
+    public void Pizza.addToBase(Base base) {
+        if (base == null) {
+            removeFromBase();
+        } else {
+            this.base = base;
+            base.setPizza(this);
+        }
+    }
+    
+    /**
+     * TODO Auto-generated method documentation
+     * 
+     */
+    public void Pizza.removeFromBase() {
+        if (this.base != null) {
+            base.setPizza(null);
+        }
+        this.base = null;
     }
     
 }

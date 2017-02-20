@@ -3,20 +3,19 @@
 
 package com.springsource.roo.pizzashop.domain;
 
-import com.springsource.roo.pizzashop.domain.Base;
 import com.springsource.roo.pizzashop.domain.Pizza;
 import com.springsource.roo.pizzashop.domain.PizzaOrder;
-import com.springsource.roo.pizzashop.domain.Topping;
+import java.util.Date;
 import java.util.Set;
 
-privileged aspect Pizza_Roo_JavaBean {
+privileged aspect PizzaOrder_Roo_JavaBean {
     
     /**
      * TODO Auto-generated method documentation
      * 
      * @return String
      */
-    public String Pizza.getName() {
+    public String PizzaOrder.getName() {
         return this.name;
     }
     
@@ -25,8 +24,26 @@ privileged aspect Pizza_Roo_JavaBean {
      * 
      * @param name
      */
-    public void Pizza.setName(String name) {
+    public void PizzaOrder.setName(String name) {
         this.name = name;
+    }
+    
+    /**
+     * TODO Auto-generated method documentation
+     * 
+     * @return String
+     */
+    public String PizzaOrder.getAddress() {
+        return this.address;
+    }
+    
+    /**
+     * TODO Auto-generated method documentation
+     * 
+     * @param address
+     */
+    public void PizzaOrder.setAddress(String address) {
+        this.address = address;
     }
     
     /**
@@ -34,17 +51,35 @@ privileged aspect Pizza_Roo_JavaBean {
      * 
      * @return Float
      */
-    public Float Pizza.getPrice() {
-        return this.price;
+    public Float PizzaOrder.getTotal() {
+        return this.total;
     }
     
     /**
      * TODO Auto-generated method documentation
      * 
-     * @param price
+     * @param total
      */
-    public void Pizza.setPrice(Float price) {
-        this.price = price;
+    public void PizzaOrder.setTotal(Float total) {
+        this.total = total;
+    }
+    
+    /**
+     * TODO Auto-generated method documentation
+     * 
+     * @return Date
+     */
+    public Date PizzaOrder.getDeliveryDate() {
+        return this.deliveryDate;
+    }
+    
+    /**
+     * TODO Auto-generated method documentation
+     * 
+     * @param deliveryDate
+     */
+    public void PizzaOrder.setDeliveryDate(Date deliveryDate) {
+        this.deliveryDate = deliveryDate;
     }
     
     /**
@@ -52,53 +87,17 @@ privileged aspect Pizza_Roo_JavaBean {
      * 
      * @return Set
      */
-    public Set<Topping> Pizza.getToppings() {
-        return this.toppings;
+    public Set<Pizza> PizzaOrder.getPizzas() {
+        return this.pizzas;
     }
     
     /**
      * TODO Auto-generated method documentation
      * 
-     * @param toppings
+     * @param pizzas
      */
-    public void Pizza.setToppings(Set<Topping> toppings) {
-        this.toppings = toppings;
-    }
-    
-    /**
-     * TODO Auto-generated method documentation
-     * 
-     * @return Base
-     */
-    public Base Pizza.getBase() {
-        return this.base;
-    }
-    
-    /**
-     * TODO Auto-generated method documentation
-     * 
-     * @param base
-     */
-    public void Pizza.setBase(Base base) {
-        this.base = base;
-    }
-    
-    /**
-     * TODO Auto-generated method documentation
-     * 
-     * @return PizzaOrder
-     */
-    public PizzaOrder Pizza.getPizzaOrder() {
-        return this.pizzaOrder;
-    }
-    
-    /**
-     * TODO Auto-generated method documentation
-     * 
-     * @param pizzaOrder
-     */
-    public void Pizza.setPizzaOrder(PizzaOrder pizzaOrder) {
-        this.pizzaOrder = pizzaOrder;
+    public void PizzaOrder.setPizzas(Set<Pizza> pizzas) {
+        this.pizzas = pizzas;
     }
     
 }

@@ -4,17 +4,19 @@ import org.springframework.roo.addon.javabean.annotations.RooToString;
 import org.springframework.roo.addon.jpa.annotations.entity.RooJpaEntity;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
+import java.util.Date;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+import org.springframework.format.annotation.DateTimeFormat;
 import java.util.HashSet;
 import java.util.Set;
 import javax.persistence.FetchType;
 import javax.persistence.OneToMany;
 import org.springframework.roo.addon.jpa.annotations.entity.JpaRelationType;
 import org.springframework.roo.addon.jpa.annotations.entity.RooJpaRelation;
-import javax.persistence.OneToOne;
-import javax.persistence.ManyToOne;
 
 /**
- * = Pizza
+ * = PizzaOrder
  *
  * TODO Auto-generated class documentation
  *
@@ -22,7 +24,7 @@ import javax.persistence.ManyToOne;
 @RooJavaBean
 @RooToString
 @RooJpaEntity
-public class Pizza {
+public class PizzaOrder {
 
     /**
      * TODO Auto-generated field documentation
@@ -36,28 +38,28 @@ public class Pizza {
      * TODO Auto-generated field documentation
      *
      */
-    private Float price;
+    @Size(max = 30)
+    private String address;
 
     /**
      * TODO Auto-generated field documentation
      *
      */
-    @OneToMany(cascade = { javax.persistence.CascadeType.MERGE, javax.persistence.CascadeType.PERSIST }, fetch = FetchType.LAZY, mappedBy = "pizza")
+    private Float total;
+
+    /**
+     * TODO Auto-generated field documentation
+     *
+     */
+    @Temporal(TemporalType.TIMESTAMP)
+    @DateTimeFormat(style = "M-")
+    private Date deliveryDate;
+
+    /**
+     * TODO Auto-generated field documentation
+     *
+     */
+    @OneToMany(cascade = { javax.persistence.CascadeType.MERGE, javax.persistence.CascadeType.PERSIST }, fetch = FetchType.LAZY, mappedBy = "pizzaOrder")
     @RooJpaRelation(type = JpaRelationType.AGGREGATION)
-    private Set<Topping> toppings = new HashSet<Topping>();
-
-    /**
-     * TODO Auto-generated field documentation
-     *
-     */
-    @OneToOne(cascade = { javax.persistence.CascadeType.MERGE, javax.persistence.CascadeType.PERSIST }, fetch = FetchType.LAZY, mappedBy = "pizza")
-    @RooJpaRelation(type = JpaRelationType.AGGREGATION)
-    private Base base;
-
-    /**
-     * TODO Auto-generated field documentation
-     *
-     */
-    @ManyToOne(fetch = FetchType.LAZY)
-    private PizzaOrder pizzaOrder;
+    private Set<Pizza> pizzas = new HashSet<Pizza>();
 }

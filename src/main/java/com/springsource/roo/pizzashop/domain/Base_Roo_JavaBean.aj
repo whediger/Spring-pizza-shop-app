@@ -4,6 +4,7 @@
 package com.springsource.roo.pizzashop.domain;
 
 import com.springsource.roo.pizzashop.domain.Base;
+import com.springsource.roo.pizzashop.domain.Pizza;
 
 privileged aspect Base_Roo_JavaBean {
     
@@ -23,6 +24,24 @@ privileged aspect Base_Roo_JavaBean {
      */
     public void Base.setName(String name) {
         this.name = name;
+    }
+    
+    /**
+     * TODO Auto-generated method documentation
+     * 
+     * @return Pizza
+     */
+    public Pizza Base.getPizza() {
+        return this.pizza;
+    }
+    
+    /**
+     * TODO Auto-generated method documentation
+     * 
+     * @param pizza
+     */
+    public void Base.setPizza(Pizza pizza) {
+        this.pizza = pizza;
     }
     
 }

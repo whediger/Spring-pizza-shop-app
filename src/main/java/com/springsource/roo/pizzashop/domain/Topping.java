@@ -4,6 +4,8 @@ import org.springframework.roo.addon.javabean.annotations.RooToString;
 import org.springframework.roo.addon.jpa.annotations.entity.RooJpaEntity;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
+import javax.persistence.FetchType;
+import javax.persistence.ManyToOne;
 
 /**
  * = Topping
@@ -23,4 +25,11 @@ public class Topping {
     @NotNull
     @Size(min = 2)
     private String name;
+
+    /**
+     * TODO Auto-generated field documentation
+     *
+     */
+    @ManyToOne(fetch = FetchType.LAZY)
+    private Pizza pizza;
 }
