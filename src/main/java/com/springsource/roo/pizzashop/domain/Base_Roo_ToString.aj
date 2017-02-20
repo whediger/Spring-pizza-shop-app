@@ -3,17 +3,17 @@
 
 package com.springsource.roo.pizzashop.domain;
 
-import com.springsource.roo.pizzashop.domain.Topping;
+import com.springsource.roo.pizzashop.domain.Base;
 
-privileged aspect Topping_Roo_ToString {
+privileged aspect Base_Roo_ToString {
     
     /**
      * TODO Auto-generated method documentation
      * 
      * @return String
      */
-    public String Topping.toString() {
-        return "Topping {" + 
+    public String Base.toString() {
+        return "Base {" + 
                 "name='" + name + '\'' + 
                 ", id='" + id + '\'' + 
                 ", version='" + version + '\'' + "}" + super.toString();

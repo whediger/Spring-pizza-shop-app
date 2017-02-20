@@ -6,7 +6,7 @@ import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
 /**
- * = Topping
+ * = Pizza
  *
  * TODO Auto-generated class documentation
  *
@@ -14,7 +14,7 @@ import javax.validation.constraints.Size;
 @RooJavaBean
 @RooToString
 @RooJpaEntity
-public class Topping {
+public class Pizza {
 
     /**
      * TODO Auto-generated field documentation
@@ -23,4 +23,10 @@ public class Topping {
     @NotNull
     @Size(min = 2)
     private String name;
+
+    /**
+     * TODO Auto-generated field documentation
+     *
+     */
+    private Float price;
 }

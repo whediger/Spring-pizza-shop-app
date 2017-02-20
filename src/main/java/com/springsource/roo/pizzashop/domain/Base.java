@@ -6,7 +6,7 @@ import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
 /**
- * = Topping
+ * = Base
  *
  * TODO Auto-generated class documentation
  *
@@ -14,7 +14,7 @@ import javax.validation.constraints.Size;
 @RooJavaBean
 @RooToString
 @RooJpaEntity
-public class Topping {
+public class Base {
 
     /**
      * TODO Auto-generated field documentation

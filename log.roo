@@ -5,3 +5,10 @@ hint
 jpa setup --provider HIBERNATE --database HYPERSONIC_IN_MEMORY --force 
 hint
 entity jpa --class ~.domain.Topping
+hint
+field string --fieldName name --notNull --sizeMin 2
+entity jpa --class ~.domain.Base
+field string --fieldName name --notNull --sizeMin 2
+entity jpa --class ~.domain.Pizza
+field string --fieldName name --notNull --sizeMin 2
+field number --fieldName price --type java.lang.Float
