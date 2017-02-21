@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="9" failures="0" name="com.springsource.roo.pizzashop.domain.ToppingIntegrationTest" time="0.158" errors="0" skipped="0">
+<testsuite tests="9" failures="0" name="com.springsource.roo.pizzashop.domain.ToppingIntegrationTest" time="0.164" errors="0" skipped="0">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="/Library/Java/JavaVirtualMachines/jdk1.8.0_101.jdk/Contents/Home/jre/lib"/>
@@ -62,13 +62,13 @@
     <property name="ftp.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
     <property name="sun.cpu.isalist" value=""/>
   </properties>
-  <testcase classname="com.springsource.roo.pizzashop.domain.ToppingIntegrationTest" name="testFlush" time="0.024"/>
-  <testcase classname="com.springsource.roo.pizzashop.domain.ToppingIntegrationTest" name="testPersist" time="0.014"/>
+  <testcase classname="com.springsource.roo.pizzashop.domain.ToppingIntegrationTest" name="testFlush" time="0.025"/>
+  <testcase classname="com.springsource.roo.pizzashop.domain.ToppingIntegrationTest" name="testPersist" time="0.02"/>
   <testcase classname="com.springsource.roo.pizzashop.domain.ToppingIntegrationTest" name="testMarkerMethod" time="0.002"/>
-  <testcase classname="com.springsource.roo.pizzashop.domain.ToppingIntegrationTest" name="testFindTopping" time="0.012"/>
-  <testcase classname="com.springsource.roo.pizzashop.domain.ToppingIntegrationTest" name="testFindToppingEntries" time="0.023"/>
-  <testcase classname="com.springsource.roo.pizzashop.domain.ToppingIntegrationTest" name="testMergeUpdate" time="0.019"/>
+  <testcase classname="com.springsource.roo.pizzashop.domain.ToppingIntegrationTest" name="testFindTopping" time="0.018"/>
+  <testcase classname="com.springsource.roo.pizzashop.domain.ToppingIntegrationTest" name="testFindToppingEntries" time="0.021"/>
+  <testcase classname="com.springsource.roo.pizzashop.domain.ToppingIntegrationTest" name="testMergeUpdate" time="0.018"/>
   <testcase classname="com.springsource.roo.pizzashop.domain.ToppingIntegrationTest" name="testCountToppings" time="0.019"/>
-  <testcase classname="com.springsource.roo.pizzashop.domain.ToppingIntegrationTest" name="testFindAllToppings" time="0.03"/>
-  <testcase classname="com.springsource.roo.pizzashop.domain.ToppingIntegrationTest" name="testRemove" time="0.015"/>
+  <testcase classname="com.springsource.roo.pizzashop.domain.ToppingIntegrationTest" name="testFindAllToppings" time="0.02"/>
+  <testcase classname="com.springsource.roo.pizzashop.domain.ToppingIntegrationTest" name="testRemove" time="0.021"/>
 </testsuite>

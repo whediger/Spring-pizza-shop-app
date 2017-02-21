@@ -25,3 +25,13 @@ perform tests
 web mvc setup
 web mvc all --package ~.web
 security setup
+jpa setup --database POSTGRES --provider HIBERNATE 
+test integration 
+perform tests
+perform tests
+perform tests
+perform tests
+perform tests
+perform tests
+perform tests
+perform tests
